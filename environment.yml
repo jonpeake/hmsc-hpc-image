@@ -1,0 +1,16 @@
+name: hmsc-hpc
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - pyreadr
+  - scipy
+  - tensorflow[and-cuda]
+  - tensorflow-probability[tf]
+  - ujson
+  - rpy2
+  - ipython-sql
+  - pip
+  - pip: 
+      - git+https://github.com/hmsc-r/hmsc-hpc.git
