@@ -1,0 +1,43 @@
+name: Docker Image base-image
+on:
+  workflow_dispatch: null
+  push:
+    branches: main
+    paths:
+      - 'environment.yml'
+      - 'Dockerfile'
+      - 'install.R'
+      - '.github/workflows/base-build.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Login to GitHub Container Registry
+        if: github.repository == 'jonpeake/hmsc-hpc-image'
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+      - name: Create short_sha tag
+        shell: bash
+        run: |
+          short_sha=$(echo "${{ github.sha }}" | cut -c1-7)
+          echo "tag=${short_sha}" >> $GITHUB_ENV
+      - name: Build the Docker image
+        if: github.repository == 'jonpeake/hmsc-hpc-image'
+        run: |
+          docker build hmsc-hpc-image -f Dockerfile \
+            --tag ghcr.io/jonpeake/hmsc-hpc-image:latest \
+            --tag ghcr.io/jonpeake/hmsc-hpc-image:${{ env.tag }}
+      - name: Publish
+        if: github.repository == 'jonpeake/hmsc-hpc-image'
+        run: |
+          docker push ghcr.io/jonpeake/hmsc-hpc-image:latest \
+          docker push ghcr.io/jonpeake/hmsc-hpc-image:${{ env.tag }}
+          
