@@ -32,7 +32,7 @@ jobs:
       - name: Build the Docker image
         if: github.repository == 'jonpeake/hmsc-hpc-image'
         run: |
-          docker build hmsc-hpc-image -f Dockerfile \
+          docker build . -f Dockerfile \
             --tag ghcr.io/jonpeake/hmsc-hpc-image:latest \
             --tag ghcr.io/jonpeake/hmsc-hpc-image:${{ env.tag }}
       - name: Publish
