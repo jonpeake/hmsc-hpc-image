@@ -7,7 +7,7 @@ on:
       - 'environment.yml'
       - 'Dockerfile'
       - 'install.R'
-      - '.github/workflows/base-build.yml'
+      - '.github/workflows/docker-build.yml'
 
 jobs:
   build:
