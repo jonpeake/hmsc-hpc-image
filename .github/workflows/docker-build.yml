@@ -38,6 +38,6 @@ jobs:
       - name: Publish
         if: github.repository == 'jonpeake/hmsc-hpc-image'
         run: |
-          docker push ghcr.io/jonpeake/hmsc-hpc-image:latest \
+          docker push ghcr.io/jonpeake/hmsc-hpc-image:latest
           docker push ghcr.io/jonpeake/hmsc-hpc-image:${{ env.tag }}
           
