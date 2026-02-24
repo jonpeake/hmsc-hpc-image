@@ -26,5 +26,5 @@ list.of.packages <- c(
   "ape",
   "abind"
 )
-install.packages(list.of.packages)
+install.packages(list.of.packages, repos = "http://cran.us.r-project.org")
 remotes::install_github('jonpeake/HMSC', dependencies = TRUE)
