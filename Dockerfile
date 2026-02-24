@@ -6,5 +6,5 @@ RUN /pyrocket_scripts/install-conda-packages.sh environment.yml && rm environmen
 COPY install.R install.R
 RUN /pyrocket_scripts/install-r-packages.sh install.R && rm install.R
 
-COPY FIM/ FIM/
-COPY hmsc-hpc/ hmsc-hpc/
+COPY FIM/ /FIM/
+COPY hmsc-hpc/ /hmsc-hpc/
