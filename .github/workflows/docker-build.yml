@@ -8,6 +8,8 @@ on:
       - 'Dockerfile'
       - 'install.R'
       - '.github/workflows/docker-build.yml'
+      - 'FIM/**'
+      - 'hmsc-hpc/**'
 
 jobs:
   build:
