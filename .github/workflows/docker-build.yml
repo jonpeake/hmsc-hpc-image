@@ -9,7 +9,7 @@ on:
       - 'install.R'
       - '.github/workflows/docker-build.yml'
       - 'FIM/**'
-      - 'hmsc-hpc/**'
+      - 'examples/**'
 
 jobs:
   build:

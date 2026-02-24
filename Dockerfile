@@ -7,4 +7,4 @@ COPY install.R install.R
 RUN /pyrocket_scripts/install-r-packages.sh install.R && rm install.R
 
 COPY ./FIM/ FIM/
-COPY ./hmsc-hpc/ hmsc-hpc/
+COPY ./examples/ examples/
