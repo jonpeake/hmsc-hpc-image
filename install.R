@@ -27,4 +27,4 @@ list.of.packages <- c(
   "abind"
 )
 install.packages(list.of.packages)
-remotes::install_git('https://github.com/jonpeake/HMSC')
+remotes::install_github('jonpeake/HMSC', dependencies = TRUE)
