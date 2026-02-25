@@ -7,6 +7,7 @@ RUN wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc |
 # add the repo from CRAN -- lsb_release adjusts to 'noble' or 'jammy' or ... as needed
 RUN add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" && \
     apt update -qq && apt install --yes --no-install-recommends wget ca-certificates gnupg  && \
+    apt-get install r-base r-base-dev && \
     wget -q -O- https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc | tee -a /etc/apt/trusted.gpg.d/cranapt_key.asc && \
     echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main" > /etc/apt/sources.list.d/cranapt.list
     
