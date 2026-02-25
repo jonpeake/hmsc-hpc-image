@@ -1,9 +1,9 @@
 FROM vastai/tensorflow:2.19.0-cuda-12.4.1
 
 
-RUN apt update -qq && \
-    apt install --no-install-recommends software-properties-common dirmngr && \
-    wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+RUN apt update -qq
+RUN apt install --no-install-recommends software-properties-common dirmngr
+RUN wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 # add the repo from CRAN -- lsb_release adjusts to 'noble' or 'jammy' or ... as needed
 RUN add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" && \
     apt update -qq && apt install --yes --no-install-recommends wget ca-certificates gnupg  && \
