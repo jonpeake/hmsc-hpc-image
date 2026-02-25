@@ -3,3 +3,17 @@ libprotobuf-dev
 protobuf-compiler
 libprotoc-dev
 make
+libssl-dev
+libxml2-dev
+libcurl4-openssl-dev
+libfontconfig1-dev
+libfreetype6-dev
+libharfbuzz-dev
+libfribidi-dev
+libcairo2-dev
+libudunits2-dev
+libgdal-dev
+libgeos-dev
+libproj-dev
+libtiff5-dev
+libgit2-dev
