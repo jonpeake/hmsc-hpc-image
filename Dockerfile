@@ -18,7 +18,7 @@ RUN sudo apt update -qq \
     echo "Pin: release o=CRAN-Apt Project" >> /etc/apt/preferences.d/99cranapt && \
     echo "Pin: release l=CRAN-Apt Packages" >> /etc/apt/preferences.d/99cranapt && \ 
     echo "Pin-Priority: 700"  >> /etc/apt/preferences.d/99cranapt && \
-    apt install --yes --no-install-recommends python3-{dbus,gi,apt}
+    apt install --yes --no-install-recommends python3-{dbus,gi,apt} && \
 ## Then install bspm (as root) and enable it, and enable a speed optimization
     Rscript -e 'install.packages("bspm")' && \
     RHOME=$(R RHOME) && \
