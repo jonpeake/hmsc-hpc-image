@@ -43,4 +43,4 @@ list.of.packages <- c(
   'truncnorm'
 )
 install.packages(list.of.packages, repos = "https://packagemanager.posit.co/cran/latest", dependencies = TRUE)
-remotes::install_github('jonpeake/HMSC', dependencies = TRUE)
+remotes::install_github('jonpeake/HMSC', dependencies = TRUE,   repos = 'https://packagemanager.posit.co/cran/latest')
