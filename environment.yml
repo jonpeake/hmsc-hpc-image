@@ -11,7 +11,7 @@ dependencies:
   - ipython-sql
   - pip
   - pip: 
-      - tensorflow[and-cuda]
+      - tensorflow[and-cuda]==2.18
       - tensorflow-probability[tf]
       - git+https://github.com/hmsc-r/hmsc-hpc.git
       
