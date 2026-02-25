@@ -2,5 +2,3 @@ libprotobuf-dev
 protobuf-compiler
 libprotoc-dev
 make
-gcc-15-multilib
-g++-15-multilib
