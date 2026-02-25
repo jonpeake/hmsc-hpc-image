@@ -1,15 +1,15 @@
-FROM ghcr.io/nmfs-opensci/py-rocket-base:latest
+FROM vastai/tensorflow:2.19.0-cuda-12.4.1
 
-USER root
 COPY apt.txt apt.txt
-RUN /pyrocket_scripts/install-apt-packages.sh apt.txt && rm apt.txt
-USER ${NB_USER}
+RUN sudo apt-get update && apt-get install -y --no-install-recommends \
+    $(cat apt.txt) && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY install.R install.R
-RUN /pyrocket_scripts/install-r-packages.sh install.R && rm install.R
+RUN Rscript install.R
 
-COPY environment.yml environment.yml
-RUN /pyrocket_scripts/install-conda-packages.sh environment.yml && rm environment.yml
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir git+https://github.com/hmsc-r/hmsc-hpc.git
 
 COPY ./FIM/ FIM/
 COPY ./examples/ examples/
