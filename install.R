@@ -26,21 +26,21 @@ list.of.packages <- c(
   "ape",
   "abind",
   'coda',
-  'ape',
-  'BayesLogit',
-  'fields',
-  'FNN',
-  'ggplot2',
+  'tidyverse',
   'MASS',
   'Matrix',
-  'matrixStats',
-  'MCMCpack',
   'nnet',
   'rlang',
-  'pROC',
-  'sp',
   'statmod',
   'truncnorm'
 )
-install.packages(list.of.packages, repos = "https://packagemanager.posit.co/cran/latest", dependencies = TRUE)
-remotes::install_github('jonpeake/HMSC', dependencies = TRUE,   repos = 'https://packagemanager.posit.co/cran/latest')
+install.packages(
+  list.of.packages,
+  repos = "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+  dependencies = TRUE
+)
+remotes::install_github(
+  'jonpeake/HMSC',
+  dependencies = TRUE,
+  repos = 'https://packagemanager.posit.co/cran/__linux__/noble/latest'
+)
