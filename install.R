@@ -24,7 +24,23 @@ list.of.packages <- c(
   "fields",
   "BayesLogit",
   "ape",
-  "abind"
+  "abind",
+  'coda',
+  'ape',
+  'BayesLogit',
+  'fields',
+  'FNN',
+  'ggplot2',
+  'MASS',
+  'Matrix',
+  'matrixStats',
+  'MCMCpack',
+  'nnet',
+  'rlang',
+  'pROC',
+  'sp',
+  'statmod',
+  'truncnorm'
 )
-install.packages(list.of.packages, repos = "http://cran.us.r-project.org")
+install.packages(list.of.packages, repos = "https://packagemanager.posit.co/cran/latest", dependencies = TRUE)
 remotes::install_github('jonpeake/HMSC', dependencies = TRUE)
