@@ -24,7 +24,7 @@ RUN Rscript -e 'install.packages("bspm")' && \
 
 
 COPY apt.txt apt.txt
-RUN sudo apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     $(cat apt.txt) && \
     rm -rf /var/lib/apt/lists/*
 
