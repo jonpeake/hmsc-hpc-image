@@ -9,7 +9,7 @@ RUN add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_r
     apt update -qq && apt install --yes --no-install-recommends wget ca-certificates gnupg  && \
     apt install --yes r-base r-base-dev && \
     wget -q -O- https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc | tee -a /etc/apt/trusted.gpg.d/cranapt_key.asc && \
-    echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main" > /etc/apt/sources.list.d/cranapt.list
+    echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/cranapt.list
     
 RUN apt update -qq && \
     echo "Package: *" > /etc/apt/preferences.d/99cranapt && \
