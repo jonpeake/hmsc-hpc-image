@@ -1,4 +1,4 @@
-FROM vastai/tensorflow:2.19.0-cuda-12.4.1
+FROM nvcr.io/nvidia/tensorflow:25.02-tf2-py3-igpu
 
 
 RUN apt update -qq
