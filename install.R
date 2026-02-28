@@ -2,6 +2,14 @@
 # look up the date that the Rocker image was created and put that
 list.of.packages <- c(
   "remotes",
+  "htmltable",
+  "broom",
+  "dplyr",
+  "modelr",
+  "ragg",
+  "rvest",
+  "stringr",
+  "tidyr",
   "Hmisc",
   "jsonify",
   "sp",
