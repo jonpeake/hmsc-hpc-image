@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/tensorflow:25.02-tf2-py3-igpu
+FROM nvcr.io/nvidia/tensorflow:25.02-tf2-py3
 
 
 RUN apt update -qq
