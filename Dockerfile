@@ -32,9 +32,7 @@ COPY install.R install.R
 RUN Rscript install.R
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir git+https://github.com/jonpeake/hmsc-hpc.git && \
-    pip install tf-keras --upgrade && \
-    pip install --no-cache-dir tensorflow --upgrade
+    pip install --no-cache-dir git+https://github.com/jonpeake/hmsc-hpc.git
 
 COPY ./FIM/ FIM/
 COPY ./examples/ examples/
